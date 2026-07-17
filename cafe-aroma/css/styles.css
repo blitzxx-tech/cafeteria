@@ -1,0 +1,158 @@
+/* ===== ESTILOS GENERALES ===== */
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 70px; /* Añadido para que el header fijo no tape el contenido */
+}
+a { text-decoration: none; color: inherit; }
+
+/* ===== HEADER ===== */
+.header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background: #fff; display: flex; align-items: center;
+    justify-content: space-between; padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1000;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { width: 40px; display: block; }
+.nav-list { display: flex; list-style: none; gap: 20px; }
+.nav-list a:hover, .nav-list a.active { color: #d94; }
+
+
+/* =======================================================
+   COMPLEMENTO: COMPONENTES MULTIMEDIA Y AJUSTES
+   ======================================================= */
+
+/* Icono del menú móvil */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ===== SECCIÓN HERO (INICIO) ===== */
+.hero {
+    height: calc(100vh - 70px);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/cafe.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.btn {
+    display: inline-block;
+    background-color: #d94;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background-color: #b73;
+}
+
+/* ===== SECCIÓN GALERÍA (IMÁGENES MÁS PEQUEÑAS) ===== */
+.galeria-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+.galeria-section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.galeria-img {
+    width: 100%;
+    max-width: 300px;  /* Reducido el tamaño máximo para que se vean pequeñas */
+    height: 200px;     /* Ajustada la altura para mantener proporción con su ancho */
+    object-fit: cover; /* Evita que la imagen se distorsione o aplaste */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.galeria-img:hover {
+    transform: scale(1.05); /* Efecto visual sutil al pasar el mouse */
+}
+
+/* ===== SECCIÓN VIDEO ===== */
+.video-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+.video-section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.video-player {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ===== SECCIÓN UBICACIÓN (MAPA) ===== */
+.mapa-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+.mapa-section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.mapa-contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* 992px: Tablets */
+@media (max-width: 992px) {
+    .hero-text h1 { font-size: 36px; }
+}
+
+/* 768px: Móviles */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav {
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        display: none;
+    }
+    .nav.active { display: block; }
+    .nav-list { flex-direction: column; padding: 20px; gap: 15px; }
+}
+
+/* 480px: Móviles pequeños */
+@media (max-width: 480px) {
+    .header { padding: 15px 20px; }
+    .hero-text h1 { font-size: 28px; }
+    .hero-text p { font-size: 15px; }
+}
